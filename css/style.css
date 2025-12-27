@@ -75,7 +75,9 @@ span {
 }
 
 
-
+.no-resize{
+  resize: none;
+}
 
 
 

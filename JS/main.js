@@ -12,10 +12,10 @@ let productsArray = [];
 
 if (JSON.parse( localStorage.getItem( "productsArray" ) ) != null)
 {
-productsArray = JSON.parse( localStorage.getItem( "productsArray" ) );
-  displayProducts( productsArray );
-  showBtnDelete ()
-}else
+  productsArray = JSON.parse( localStorage.getItem( "productsArray" ) );
+    displayProducts( productsArray );
+    showBtnDelete ()
+  }else
 {
   alert( `
     No Storage Data in LocalStorage
@@ -27,8 +27,8 @@ productsArray = JSON.parse( localStorage.getItem( "productsArray" ) );
 function addProduct ()
 {
   let product = {
-    name: productName.value,
-    cate: categoryName.value,
+    name: productName.value.toLowerCase(),
+    cate: categoryName.value.toLowerCase(),
     desc: descriptionName.value,
     price: productPrice.value
   }
@@ -155,8 +155,8 @@ function searchName(search)
   {
     cartona2 += `
     <tr>
-      <td>${i }</td>
-      <td>${newArray[i].name.replace (search  , `<span>${search}</span>`)}</td>
+      <td>${i + 1}</td>
+      <td>${newArray[i].name.replace (search.toLowerCase()  , `<span>${search.toLowerCase()}</span>`)}</td>
       <td>${newArray[i].cate}</td>
       <td>${newArray[i].desc}</td>
       <td>${newArray[i].price}</td>
